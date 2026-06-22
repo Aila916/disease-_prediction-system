@@ -2,6 +2,7 @@ services:
   - type: web
     name: disease-prediction-system
     runtime: python
+    pythonVersion: 3.11.11
     buildCommand: pip install --upgrade pip && pip install -r requirements.txt
     startCommand: gunicorn run:app
     envVars:
