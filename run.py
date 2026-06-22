@@ -3,6 +3,7 @@ from app.models.user import User
 from app.models.disease import Disease
 from app.models.symptom import Symptom
 from app.models.prediction import Prediction
+from app.models.feedback import Feedback
 
 app = create_app()
 
@@ -13,7 +14,8 @@ def make_shell_context():
         'User': User,
         'Disease': Disease,
         'Symptom': Symptom,
-        'Prediction': Prediction
+        'Prediction': Prediction,
+        'Feedback': Feedback
     }
 
 if __name__ == '__main__':
@@ -21,6 +23,7 @@ if __name__ == '__main__':
         db.create_all()
         print("✅ Database tables created successfully!")
         
+        # Create admin user if none exists
         if not User.query.filter_by(email='admin@admin.com').first():
             from flask_bcrypt import Bcrypt
             bcrypt = Bcrypt()
