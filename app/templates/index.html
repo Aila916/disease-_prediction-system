@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Home - Disease Prediction{% endblock %}
+{% block content %}
+<div class="container py-5">
+    <div class="row align-items-center">
+        <div class="col-lg-6">
+            <h1 class="display-4 fw-bold">Disease Prediction System</h1>
+            <p class="lead">Powered by Machine Learning</p>
+            <p>Enter your symptoms and get instant predictions. Our ML model analyzes symptom patterns to suggest possible conditions.</p>
+            <div class="mt-4">
+                <a href="/api/predict" class="btn btn-primary btn-lg"><i class="fas fa-stethoscope me-2"></i>Start Prediction</a>
+                {% if not current_user.is_authenticated %}
+                    <a href="/auth/register" class="btn btn-outline-secondary btn-lg ms-2">Create Account</a>
+                {% endif %}
+            </div>
+            <div class="mt-5">
+                <div class="row g-3">
+                    <div class="col-4"><i class="fas fa-microscope text-primary"></i> ML Powered</div>
+                    <div class="col-4"><i class="fas fa-clock text-success"></i> Real-time</div>
+                    <div class="col-4"><i class="fas fa-shield-alt text-info"></i> Secure</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 text-center">
+            <i class="fas fa-heartbeat" style="font-size: 200px; color: #3498db;"></i>
+        </div>
+    </div>
+</div>
+{% endblock %}

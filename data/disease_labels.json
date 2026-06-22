@@ -1,0 +1,12 @@
+{
+  "Common Cold": "Mild",
+  "Influenza": "Moderate",
+  "COVID-19": "Moderate",
+  "Diabetes": "Moderate",
+  "Malaria": "Severe",
+  "Typhoid": "Severe",
+  "Pneumonia": "Severe",
+  "Hypertension": "Moderate",
+  "Gastroenteritis": "Moderate",
+  "Allergy": "Mild"
+}
